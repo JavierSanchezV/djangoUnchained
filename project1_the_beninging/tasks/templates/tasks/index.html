@@ -1,0 +1,19 @@
+{% extends 'tasks/layout.html' %}
+
+{% block title %}
+    Welcome 2 Da 2 Do List!
+{% endblock %}
+
+{% block body %}
+    <h1>Hi!</h1>
+    <h2>Here you go!</h2>
+    <a href="{% url 'tasks:addTask'%}">Add New Task</a>
+    <h4>Current Tasks:</h4>
+    <ol>
+        {% for task in tasks%}
+        <li>{{task.task}} - Priority: {{task.priority}}</li>
+        {% empty %}
+        <li>No tasks added yet!</li>
+        {% endfor %}
+    </ol>
+{% endblock %}

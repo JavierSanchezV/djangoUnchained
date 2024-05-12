@@ -1,0 +1,18 @@
+{% extends 'tasks/layout.html' %}
+
+{% block title %}
+    Add New Task 2 da 2 list!!!
+{% endblock %}
+
+{% block body %}
+    <h1>New Task Form</h1>
+    <p>Go crazy then:</p>
+
+    <form action="{% url 'tasks:addTask' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Create New Task!</button>
+    </form>
+
+    <a href="{% url 'tasks:index'%}">Back 2 2 do list</a>
+{% endblock %}
